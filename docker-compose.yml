@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  mariadb:
+    image: mariadb:10.4.6
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    restart: on-failure
+    user: ${LOCAL_USER}
+  nginx:
+    image: nginx:1.17.0-alpine
+    restart: on-failure
+    depends_on:
+      - php
