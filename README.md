@@ -1,7 +1,21 @@
 # docker-symfony4
 ## Setup short
+### Step 1: Ubuntu
+Install docker, docker compose and git, if not already done.
 ```bash
-apt-get install docker docker-compose
+apt-get install docker docker-compose git
+```
+### Step 1: Mac OS
+Install homebrew, if not already done.
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+Install docker, docker compose and git if not already done.
+```bash
+brew install docker docker-compose git
+```
+### Step 2: All OS
+```bash
 git clone https://github.com/StefanGerl/docker-symfony4.git
 cd docker-symfony4
 docker-compose up -d
