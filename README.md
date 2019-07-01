@@ -29,12 +29,13 @@ Choose a mariadb (most mysql clients should work) database client, for example h
 brew cask install sequel-pro
 ```
 Start client and add configuration, for sequel pro hit the plus-button on the bottom left. Use the following values for your new configuration (values in [] should be replaced with data of your choice):
-- Name: [Your favorite name]
-- Host: 127.0.0.1
-- User: root
-- Password: root
+- name: [Your favorite name]
+- host: 127.0.0.1
+- user: root
+- password: root
+- database: symfony
 
-Stay with default values for the rest of the fields (Database: empty and Port: 3306). Test and save the configuration, connect to database after. For sequel pro: Click on "test" button, the test has to be successfull, than click on "save". Click on "connect" button after, and now you are connected to the database server that will be used by the actual symfony 4 configuration from this installation.
+Stay with default values for the rest of the fields (port: 3306). Test and save the configuration, connect to database after. For sequel pro: Click on "test" button, the test has to be successfull, than click on "save". Click on "connect" button after, and now you are connected to the database server that will be used by the actual symfony 4 configuration from this installation.
 ## Pay attention
 This setup and all credentials initialized with this docker setup are exposed on this repository in public. Be sure that you development environment is not reachable from outside your secured network, and change the whole configuration if you want to use this setup on staging or production (even if any attack should only harm you docker environment).
 
