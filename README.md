@@ -15,7 +15,7 @@ Install docker, docker compose and git if not already done.
 brew install docker docker-compose git
 ```
 ### Step 2: All OS
-To start a new symfony 4 project, with a docker configured dev environment you could just fork this repository into your git-hub account. But if you dont want your changes ever beeing integrated to this symfony 4 and docker repository, you should consider to duplicate it.
+To start a new symfony 4 project, with a docker configured dev environment you could just fork this repository into your git-hub account. But if you dont want your changes ever beeing integrated to repository, you should consider to duplicate it.
 #### 2.1 Fork and clone
 Fork this repository to your git-hub account via the github web interface and clone your fork to your local harddrive.
 ```bash
