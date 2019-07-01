@@ -33,6 +33,7 @@ Start client and add configuration, for sequel pro hit the plus-button on the bo
 - Host: 127.0.0.1
 - User: root
 - Password: root
+
 Stay with default values for the rest of the fields (Database: empty and Port: 3306). Test and save the configuration, connect to database after. For sequel pro: Click on "test" button, the test has to be successfull, than click on "save". Click on "connect" button after, and now you are connected to the database server that will be used by the actual symfony 4 configuration from this installation.
 ## Pay attention
 This setup and all credentials initialized with this docker setup are exposed on this repository in public. Be sure that you development environment is not reachable from outside your secured network, and change the whole configuration if you want to use this setup on staging or production (even if any attack should only harm you docker environment).
