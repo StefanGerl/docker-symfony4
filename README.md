@@ -25,3 +25,12 @@ If so, you can change the bound port and use that for calling your page address 
 
 ## Pay attention
 This setup and all credentials initialized with this docker setup are exposed on this repository in public. Be sure that you development environment is not reachable from outside your secured network, and change the whole configuration if you want to use this setup on staging or production (even if any attack should only harm you docker environment).
+
+## Inspiration
+The docker configuration is inspired by https://knplabs.com/en/blog/how-to-dockerise-a-symfony-4-project.
+
+## Docker images
+To change the docker images configurations, there are a lot of parameters that can be changed. You can find a configuration for those on their docker-hub pages. The docker hub images that are used, are all official docker-hub versions, ubuntu and debian, alpine only for nginx (I wanted to use alpine only in the beginning but: for php it was more complicated with the lack of real benefits, the same for mariadb):
++ mariadb: https://hub.docker.com/_/mariadb - mariadb:10.4.6, that is based on ubuntu bionic.
++ nginx: https://hub.docker.com/_/nginx - nginx:1.17.0-alpine.
++ php-fpm: https://hub.docker.com/_/php - php:7.3.6-fpm - that is based on debian stretch.
