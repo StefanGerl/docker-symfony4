@@ -1,6 +1,9 @@
 version: '3.7'
 
 services:
+  mariadb:
+    ports:
+      - '${MYSQL_PORT}:3306'
   php:
     volumes:
       - './apps/symfony-website/:/usr/src/app'
