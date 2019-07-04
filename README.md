@@ -30,7 +30,7 @@ docker-compose up -d
 ```
 #### Test
 After that, open your browser and type http://localhost to the adress field. If you can not see the symfony 4 start page, check if you have a local webserver running on port 80 blocking the docker port binding on the default web page port.
-If so, you can change the bound port and use that for calling your page address ex. http://localhost:8080, or shut down your local webserver.
+If so, you can change the bound port and use that for calling your page address ex. http://localhost:8080, or shut down your local webserver. You can find the bound port in the .env file in the root of the repository.
 #### Connect to DB
 Choose a mariadb (most mysql clients should work) database client, for example https://www.sequelpro.com/ can be installed with:
 ```
@@ -43,7 +43,7 @@ Start client and add configuration, for sequel pro hit the plus-button on the bo
 - password: root
 - database: symfony
 
-Stay with default values for the rest of the fields (port: 3306). Test and save the configuration, connect to database after. For sequel pro: Click on "test" button, the test has to be successfull, than click on "save". Click on "connect" button after, and now you are connected to the database server that will be used by the actual symfony 4 configuration from this installation.
+Stay with default values for the rest of the fields (port: 3306). Test and save the configuration, connect to database after. For sequel pro: Click on "test" button, the test has to be successfull, than click on "save". Click on "connect" button after, and now you are connected to the database server that will be used by the actual symfony 4 configuration from this installation. If you can not connect on port 3306, check if you have a local db server running and shut down your local server if, or bind another port in the docker-compose configuration. That configuration can be found in the .env file in the root of the repository. The change there will effect the symfony configuration as well.
 ## Pay attention
 This setup and all credentials initialized with this docker setup are exposed on this repository in public. Be sure that you development environment is not reachable from outside your secured network, and change the whole configuration if you want to use this setup on staging or production (even if any attack should only harm you docker environment).
 
