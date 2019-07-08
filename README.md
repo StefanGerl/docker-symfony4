@@ -28,6 +28,11 @@ Details on duplication approach: https://help.github.com/en/articles/duplicating
 cd docker-symfony4
 docker-compose up -d
 ```
+#### 2.3 Run composer install.
+```bash
+docker exec -it docker-symfony4_php_1 bash
+composer install
+```
 #### Test
 After that, open your browser and type http://localhost to the adress field. If you can not see the symfony 4 start page, check if you have a local webserver running on port 80 blocking the docker port binding on the default web page port.
 If so, you can change the bound port and use that for calling your page address ex. http://localhost:8080, or shut down your local webserver. You can find the bound port in the .env file in the root of the repository.
