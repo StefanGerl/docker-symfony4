@@ -30,7 +30,7 @@ docker-compose up -d
 ```
 #### 2.3 Run composer install.
 ```bash
-docker exec -it docker-symfony4_php_1 bash
+docker exec -it --user root docker-symfony4_php_1 bash
 composer install
 ```
 #### Test
