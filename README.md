@@ -1,38 +1,31 @@
 # docker-symfony4
-## To much intro text?
-[Move on to step by step instructions](https://github.com/StefanGerl/docker-symfony4#step-1-mac-os).
-- For instructions including setup instructions for local requirements on Mac OS:
-Start with "[Step 1: Mac OS](https://github.com/StefanGerl/docker-symfony4#step-1-mac-os)".
-- For instructions including only the repository setup and how to start the docker machine:
-Follow "[Step 2: All OS](https://github.com/StefanGerl/docker-symfony4#step-2-all-os)".
-## What is this?
-This is an easy way to start your own git versioned, github hosted, symfony 4 development environment, based on a docker-compose setup, including any step to install local prerequisites on Mac OS, as the perfect solution for working on a symfony 4 project as a team.
-
-Installing the local prerequisites on Linux should be very similar, changing this instructions from brew to the package manager that is delivered with your distribution.
-
-For Windows, setting up all local requirements sadly is more complex, especially regarding the docker environment.
 ## What is included?
 This is a docker compose configuration including a symfony 4 installation (website setup, not the smaller one), with nginx:1.17.0-alpine, mariadb:10.4.6 (build on ubuntu bionic), php:7.3.6-fpm (build on debian stretch).
 
 Nginx and mariadb are docker hub official images, php is slightly changed. Nginx config ist copy pasted from symfony manual.
 ## Setup - short description
-If you still have questions after reading the short description here, or you want to go deeper into it, or you want to start a discussion about this solution, there is a [detailed description on my website](https://stefan-gerlinger.com/symfony-4-project-development-environment-in-less-than-6-minutes/).
-
-I am happy with every input I get. 
-
 ### Step 1: Mac OS
-Install homebrew, if not already done.
+Install homebrew, if not already done:
 ```bash
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Install docker, docker compose and git if not already done.
+Install git if not already done:
 ```bash
-$ brew install docker docker-compose git
+$ brew install git
 ```
-Install docker desktop
+Install docker desktop, if not already done:
 ```bash
 $ brew cask install docker
 ```
+Docker desktop includes docker-compose which is needed.
+### Step 1: Other OS
+On windows it is enough to install the windows docker desktop version you can download from [download.docker.com](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe). Docker desktop includes the needed docker-compose.
+
+On Linux you have to install docker first, which is well explained on [digitalocean.com howto](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04), and docker-compose separately which is described on [docs.docker.com](https://docs.docker.com/compose/install/).
+
+Remember: To run this setup, docker and docker-compose is needed.
+
+The docker-compose setup of this repository was never tested on other operating systems than Mac OS.
 ### Step 2: All OS
 To start your own project, you could just fork this repository into your git-hub account. But since you dont want your changes ever beeing integrated to my repository, or beeing related to my project as a github fork for ever, you should consider to duplicate it.
 
@@ -57,13 +50,15 @@ Remove the temporary local repository you created before:
 $ cd ..
 $ rm -rf docker-symfony4
 ```
-Clone your own, new created duplicate of this repository to your local drive.
+Checkout your own, new created duplicate of this repository to your local drive.
 ```
 $ git clone https://github.com/[your-github-user]/[your-new-repository-name].git
 ```
 This mirroring steps where taken from [github help](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository).
-#### 2.2 Start the docker environment
-Mac OS: Docker Desktop - Command + Space, type docker, hit enter ;)
+#### 2.2 Start the docker application container engine.
+- Mac OS: Start Docker Desktop - Command + Space, type docker, hit enter.
+- Windows: Start Docker Desktop - Startmenu, type docker, click Docker Desktop.
+- Linux: The docker process should be started on boot.
 #### 2.3 Go to the directory and start the docker containers.
 Go into the directory where you checked out your copy of this repository. Then run:
 ```bash
@@ -77,7 +72,7 @@ $ composer install
 #### Open symfony start page
 After that, open your browser and type http://localhost to the address field. If you can not see the symfony 4 start page, check [the known issues section](https://github.com/StefanGerl/docker-symfony4#known-issues) of this document.
 #### Connect to DB
-Choose a mariadb (most mysql clients should work) database client, for example [Sequel Pro](https://www.sequelpro.com/) can be installed with:
+Choose a mariadb (most mysql clients should work) database client, for example on Mac OS: [Sequel Pro](https://www.sequelpro.com/), can easily be installed with:
 ```
 $ brew cask install sequel-pro
 ```
@@ -100,10 +95,10 @@ To change the docker images configurations, there are a lot of parameters that c
 
 The docker hub images that are used, are all official docker-hub versions, ubuntu and debian, alpine only for nginx.
 
-I wanted to use "alpine only" in the beginning but: for the php container it was more complicated with the lack of real benefits, the same for mariadb. You can start a discussion about that on the repositories detailed website. You can find a link in the project description.
-+ mariadb: [docker hub project page](https://hub.docker.com/_/mariadb) - mariadb:10.4.6, that is running inside a container running with ubuntu bionic.
-+ nginx: [docker hub project page](https://hub.docker.com/_/nginx) - nginx:1.17.0-alpine. nginx:1.17.0 server that is running inside a container running alpine linux.
-+ php-fpm: [docker hub project page](https://hub.docker.com/_/php) - php:7.3.6-fpm that is running inside a container running debian stretch.
+I wanted to use "alpine only" in the beginning but: for the php container it was more complicated with the lack of real benefits, the same for mariadb.
++ mariadb: [docker hub project page](https://hub.docker.com/_/mariadb) - mariadb:10.4.6, that is running inside a container running with [Ubuntu 18.04 "Bionic Beaver"](https://wiki.ubuntuusers.de/Bionic_Beaver/).
++ nginx: [docker hub project page](https://hub.docker.com/_/nginx) - nginx:1.17.0-alpine. nginx:1.17.0 server that is running inside a container running [Alpine Linux](https://de.wikipedia.org/wiki/Alpine_Linux).
++ php-fpm: [docker hub project page](https://hub.docker.com/_/php) - php:7.3.6-fpm that is running inside a container running [Debian 9 "DebianStretch"](https://wiki.debian.org/DebianStretch).
 ## Known issues
 ### Existing and running local webserver and/or database server
 If you have a local webserver running on port 80 and/or a local database server running on port 3306, they are blocking the ports for this docker configuration.
