@@ -56,9 +56,9 @@ $ git clone https://github.com/[your-github-user]/[your-new-repository-name].git
 ```
 This mirroring steps where taken from [github help](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository).
 #### 2.2 Start the docker application container engine.
-- Mac OS: Start Docker Desktop - Command + Space, type docker, hit enter.
-- Windows: Start Docker Desktop - Startmenu, type docker, click Docker Desktop.
-- Linux: The docker process should be started on boot.
+- Mac OS: Start Docker Desktop, if it's not auto started - Command + Space, type docker, hit enter.
+- Windows: Start Docker Desktop, if it's not auto started - Startmenu, type docker, click Docker Desktop.
+- Linux: Start the docker service, if it's not auto started. Depending on your linux version.
 #### 2.3 Go to the directory and start the docker containers.
 Go into the directory where you checked out your copy of this repository. Then run:
 ```bash
