@@ -16,9 +16,4 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 
 WORKDIR /usr/src/app
 
-<<<<<<< Updated upstream
-=======
-RUN composer install --no-dev --no-interaction -o
-
->>>>>>> Stashed changes
 RUN PATH=$PATH:/usr/src/apps/vendor/bin:bin
