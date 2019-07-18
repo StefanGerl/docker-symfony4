@@ -4,7 +4,7 @@ This is a docker compose configuration including a symfony 4 installation (websi
 
 Nginx and mariadb are docker hub official images, php is slightly changed. Nginx config ist copy pasted from symfony manual.
 ## Setup - short description
-### Step 1: Mac OS
+### Step 1 for Mac OS
 Install homebrew, if not already done:
 ```bash
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -18,7 +18,7 @@ Install docker desktop, if not already done:
 $ brew cask install docker
 ```
 Docker desktop includes docker-compose which is needed.
-### Step 1: Other OS
+### Step 1 for other OS
 On windows it is enough to install the windows docker desktop version you can download from [download.docker.com](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe). Docker desktop includes the needed docker-compose.
 
 On Linux you have to install docker first, which is well explained on [digitalocean.com howto](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04), and docker-compose separately which is described on [docs.docker.com](https://docs.docker.com/compose/install/).
@@ -26,7 +26,7 @@ On Linux you have to install docker first, which is well explained on [digitaloc
 Remember: To run this setup, docker and docker-compose is needed.
 
 The docker-compose setup of this repository was never tested on other operating systems than Mac OS.
-### Step 2: All OS
+### Step 2 for any OS
 To start your own project, you could just fork this repository into your git-hub account. But since you dont want your changes ever beeing integrated to my repository, or beeing related to my project as a github fork for ever, you should consider to duplicate it.
 
 First, change to your local hard drives project directory, depending on the chosen approach, pick one of the following step 2.1.
