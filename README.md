@@ -1,6 +1,6 @@
 # docker-symfony4
 ## What is included?
-This is a docker compose configuration including a symfony 4 installation (website setup, not the smaller one), with nginx:1.17.0-alpine, mariadb:10.4.6 (build on ubuntu bionic), php:7.3.6-fpm (build on debian stretch).
+This is a docker compose configuration including a symfony 4 installation (website setup, not the smaller one), with nginx:1.17.0-alpine, mariadb:10.4.6 (build on ubuntu bionic), php:7.3.6-fpm (build on debian stretch), with an on the fly working configuration: That means start-up, visit localhost, that's it.
 
 Nginx and mariadb are docker hub official images, php is slightly changed. Nginx config ist copy pasted from symfony manual.
 ## Setup - short description
