@@ -56,9 +56,9 @@ $ git clone https://github.com/[your-github-user]/[your-new-repository-name].git
 ```
 This mirroring steps where taken from [github help](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository).
 #### 2.2 Start the docker application container engine.
-- Mac OS: Start Docker Desktop - Command + Space, type docker, hit enter.
-- Windows: Start Docker Desktop - Startmenu, type docker, click Docker Desktop.
-- Linux: The docker process should be started on boot.
+- Mac OS: Start Docker Desktop, if it's not auto started - Command + Space, type docker, hit enter.
+- Windows: Start Docker Desktop, if it's not auto started - Startmenu, type docker, click Docker Desktop.
+- Linux: Start the docker service, if it's not auto started. Depending on your linux version.
 #### 2.3 Go to the directory and start the docker containers.
 Go into the directory where you checked out your copy of this repository. Then run:
 ```bash
@@ -83,7 +83,7 @@ Start client and add configuration, for sequel pro hit the plus-button on the bo
 - password: root
 - database: symfony
 
-Stay with default values for the rest of the fields (port: 3306). Test and save the configuration, connect to database after.
+Stay with default values for the rest of the fields (port: 3306). Test and save the configuration, connect to database after. If you can not connect, check [the known issues section](https://github.com/StefanGerl/docker-symfony4#known-issues) of this document.
 
 For sequel pro: Click on "test" button, the test has to be successfull, than click on "save". Click on "connect" button after, and now you are connected to the database server that will be used by the actual symfony 4 configuration.
 ## Pay attention
