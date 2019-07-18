@@ -83,7 +83,7 @@ Start client and add configuration, for sequel pro hit the plus-button on the bo
 - password: root
 - database: symfony
 
-Stay with default values for the rest of the fields (port: 3306). Test and save the configuration, connect to database after.
+Stay with default values for the rest of the fields (port: 3306). Test and save the configuration, connect to database after. If you can not connect, check [the known issues section](https://github.com/StefanGerl/docker-symfony4#known-issues) of this document.
 
 For sequel pro: Click on "test" button, the test has to be successfull, than click on "save". Click on "connect" button after, and now you are connected to the database server that will be used by the actual symfony 4 configuration.
 ## Pay attention
